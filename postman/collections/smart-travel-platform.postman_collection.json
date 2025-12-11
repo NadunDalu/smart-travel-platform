@@ -1,0 +1,237 @@
+{
+  "info": {
+    "_postman_id": "21eec738-565e-474b-ba2c-727ee29be48d",
+    "name": "smart-travel-platform",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49881238",
+    "_collection_link": "https://nadundaluwatta0426-4321055.postman.co/workspace/9433a909-f925-4013-839f-df80b41484e6/collection/49881238-21eec738-565e-474b-ba2c-727ee29be48d?action=share&source=collection_link&creator=49881238"
+  },
+  "item": [
+    {
+      "name": "Create a User",
+      "id": "453dcc1e-c550-4922-a1b4-848270a60876",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Hiruni Prabodhya\",\r\n  \"email\": \"hiruni@example.com\",\r\n  \"phone\": \"+94771234567\",\r\n  \"address\": \"123 Main St, Colombo\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create a Flight",
+      "id": "c7e84e6c-a228-4381-9147-3b8f51e262bf",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"flightNumber\": \"SL101\",\r\n  \"airline\": \"SriLankan Airlines\",\r\n  \"origin\": \"Colombo\",\r\n  \"destination\": \"Dubai\",\r\n  \"departureTime\": \"2026-01-10 08:00\",\r\n  \"arrivalTime\": \"2026-01-10 12:00\",\r\n  \"price\": 45000.00,\r\n  \"availableSeats\": 50\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/api/flights",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "flights"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create a Hotel",
+      "id": "8149b2ae-bbda-4720-9901-00af1accd709",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Hilton Colombo\",\r\n  \"location\": \"Colombo\",\r\n  \"address\": \"2 Sir Chittampalam A Gardiner Mawatha\",\r\n  \"rating\": 5,\r\n  \"pricePerNight\": 15000.00,\r\n  \"availableRooms\": 20,\r\n  \"amenities\": \"WiFi, Pool, Gym, Spa\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8083/api/hotels",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8083",
+          "path": [
+            "api",
+            "hotels"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create a Booking (Main Flow)",
+      "id": "24c944ea-c133-4358-9786-9a921bfcc343",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"userId\": 1,\r\n  \"flightId\": 1,\r\n  \"hotelId\": 1,\r\n  \"travelDate\": \"2025-01-10\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8084/api/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8084",
+          "path": [
+            "api",
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Process Payment",
+      "id": "f2199e2c-aad2-4ed6-a0f6-8946827cd8f9",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"bookingId\": 1,\r\n  \"amount\": 60000.00,\r\n  \"paymentMethod\": \"CREDIT_CARD\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8085/api/payments/process",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8085",
+          "path": [
+            "api",
+            "payments",
+            "process"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Verify Booking Status",
+      "id": "29c510d3-a016-4c62-a874-220d1c06ba54",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8084/api/bookings/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8084",
+          "path": [
+            "api",
+            "bookings",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Check Notifications",
+      "id": "dc452abe-c848-4a9f-97ff-9ab267c9c04b",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/notifications/user/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "notifications",
+            "user",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

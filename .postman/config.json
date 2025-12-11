@@ -1,0 +1,14 @@
+{
+  "workspace": {
+    "id": "9433a909-f925-4013-839f-df80b41484e6"
+  },
+  "entities": {
+    "collections": [
+      "..\\postman\\collections\\smart-travel-platform.postman_collection.json"
+    ],
+    "environments": [],
+    "specs": [],
+    "flows": [],
+    "globals": []
+  }
+}
